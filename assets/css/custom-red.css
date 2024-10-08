@@ -102,8 +102,8 @@ Author : Webyzona.com
 /*1-2 GO TO TOP*/
 
 #scrollUp {
-	background-color: #e74c3c;
-	background-image: url("../images/general/top-red.png");
+	background-color: #7aace2;
+	background-image: url("../images/general/top-blue.png");
 	bottom: 20px;
 	right: 20px;
 	width: 38px;    /* Width of image */
@@ -622,7 +622,7 @@ blockquote p {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
-	background: url('../images/general/logo-red.png') no-repeat;
+	background: url('../images/general/logo_abc_new_blue_2.png') no-repeat;
 	background-size: 100%;
 	padding: 0;
 }
@@ -652,7 +652,7 @@ blockquote p {
 	margin-bottom: 0;
 }
 .navbar-inverse {
-	background-color: #3d566e;
+	background-color: #7aace2;
 	border-top: none;
 	border-bottom: 3px solid #e74c3c;
 	border-right: none;
