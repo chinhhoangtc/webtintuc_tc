@@ -52,7 +52,7 @@
                 </h3>
 
                 <p class="news_item_sapo" title="<?php echo $row['title']; ?>" href="">
-                (Báo GENZ) - <?php echo $row['content']; ?>
+                (Báo ABC) - <?php echo $row['content']; ?>
                 </p>
               </div>
           </div>

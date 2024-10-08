@@ -16,7 +16,7 @@ if (!isset($_SESSION['account_admin']) && basename($_SERVER['PHP_SELF']) != 'log
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Báo GENZ | Dashboard</title>
+    <title>Báo ABC | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->

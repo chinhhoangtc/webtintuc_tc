@@ -37,9 +37,9 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!-- Giao diện đăng nhập -->
-<div class="container">
-    <div class="row">
-        <div class="col col-md-6 offset-md-3">
+<div class="container ">
+    <div class="row d-flex justify-content-center align-items-center min-vh-100">
+        <div class="col col-md-6">
             <div class="card">
                 <div class="card-header text-center">
                     Đăng nhập
@@ -62,8 +62,10 @@ if (isset($_POST['submit'])) {
                             <label for="password">Mật khẩu</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Mật khẩu">
                         </div>
+                        <div class="w-100 d-flex justify-content-center">
 
-                        <button type="submit" class="btn btn-primary mt-4" name='submit'>Đăng nhập</button>
+                            <button type="submit" class="btn btn-primary mt-4 text-center w-100" name='submit'>Đăng nhập</button>
+                        </div>
                         <!-- <button type="button" class="btn btn-primary mt-4">
                             <a href="forget-password.php">Quên mật khẩu</a>
                         </button> -->

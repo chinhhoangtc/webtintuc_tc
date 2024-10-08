@@ -1,8 +1,8 @@
 <?php if (isset($_SESSION['account_admin'])) : ?>
   <footer class="main-footer">
-    <strong>Web tin tức. <a href="#">Báo GENZ</a></strong>
+    <strong>Web tin tức. <a href="#">Báo ABC</a></strong>
     <div class="float-right d-none d-sm-inline-block">
-      <b>Nhóm</b> 07
+      <b>Nhóm</b> ABC
     </div>
   </footer>
 <?php endif; ?>

@@ -46,7 +46,7 @@ $status=$_POST['status'];
 
 
 // Create connection
-$conn = new mysqli("localhost", "root", "", "webtintuc");
+$conn = new mysqli("localhost", "root", "", "webtintuc2");
 // Check connection
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);

@@ -856,7 +856,7 @@ blockquote p {
 	line-height: 42px;
 }
 .ticker-content:focus {
-none;
+/* none; */
 }
 .ticker-content a {
 	text-decoration: none;
@@ -987,7 +987,7 @@ none;
 .owl-theme .owl-controls .owl-page {
 	display: inline-block;
 	zoom: 1;
-*display: inline;/*IE7 life-saver */
+/* *display: inline;IE7 life-saver */
 }
 .owl-theme .owl-controls .owl-page span {
 	display: block;
@@ -1495,7 +1495,7 @@ none;
 	height: 30px;
 	position: relative;
 	text-align: left;
-	color: #ion-android-image;
+	color: ion-android-image;
 	margin-top: 15px;
 	float: left;
 }
