@@ -650,9 +650,10 @@ blockquote p {
 }
 .navbar {
 	margin-bottom: 0;
+	height: 50px;
 }
 .navbar-inverse {
-	background-color: #7aace2;
+	background: linear-gradient(198deg, #5193e9, #49dee1);
 	border-top: none;
 	border-bottom: 3px solid #e74c3c;
 	border-right: none;
@@ -753,7 +754,8 @@ blockquote p {
     6-SEARCH
 \*------------------------------------*/
 .nav-search-outer {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
 }
 .search-container {
 	background-color: #e74c3c;
@@ -787,17 +789,16 @@ blockquote p {
  opacity: 1 !important;
 }
 .toggle-search {
-	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	display: inline-block;
-	background: #e74c3c;
-	
-	height: 60px;
-	padding: 5px 15px 0 15px;
-	line-height: 55px;
-	text-align: center;
-	font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    background: #e74c3c;
+    height: 50px;
+    padding: 0px 15px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
 }
 .toggle-search:hover, .toggle-search:focus {
 	color: #fff;
@@ -2352,7 +2353,7 @@ footer .stars {
 
 @media (min-width: 850px) {
 .search-container input {
-	font-size: 2em;
+	font-size: 1.5rem;
 }
 }
 

@@ -5,10 +5,10 @@ require('./connect.php'); ?>
   <div class="page-header">
 
     <h1>Trang chủ</h1>
-    
+
   </div>
 
-  
+
 
   <div class="row">
     <div class="ind">
@@ -33,7 +33,7 @@ require('./connect.php'); ?>
           </li>
         </div>
       <?php } ?>
-
+     
     </div>
   </div>
 
@@ -69,8 +69,7 @@ require('./connect.php'); ?>
     width: 25%;
   }
 
-  h4{
+  h4 {
     margin-top: 17px;
   }
-  
 </style>
