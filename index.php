@@ -11,7 +11,7 @@ require('./connect.php'); ?>
 
 
   <div class="row">
-    <div class="ind">
+    
       <?php
       $sql = "SELECT * FROM posts ORDER BY id ASC";
       $result = mysqli_query($conn, $sql);
@@ -25,16 +25,19 @@ require('./connect.php'); ?>
 
 
       ?>
-        <div class="col">
+        <div class="col-md-9">
           <li class=bantin>
             <?php echo "<a href='post-item-details.php?id=$idtin&category_id=$category_id'><img src='$image' width='200px' height='150px' /></a>";
             echo "<a href='post-item-details.php?id=$idtin&category_id=$category_id'><h4>$tieude</h4></a>";
             ?>
           </li>
         </div>
+        <div class="col-md-3">
+          <div class="advertisements">Quaang cao</div>
+        </div>
       <?php } ?>
      
-    </div>
+  
   </div>
 
   <!-- calendar start -->
@@ -50,24 +53,24 @@ require('./connect.php'); ?>
 <?php include_once('./master_layout/footer.php') ?>
 
 <style>
-  .ind {
+  /* .ind {
     width: 70%;
-  }
+  } */
 
-  .col {
+  /* .col {
     float: left;
     width: 30%;
     padding: 20px;
-  }
+  } */
 
   .bantin {
     list-style-type: none;
   }
 
-  .advertisements {
+  /* .advertisements {
     float: right;
     width: 25%;
-  }
+  } */
 
   h4 {
     margin-top: 17px;
