@@ -24,10 +24,10 @@ require('./../connect.php'); ?>
 <div class="content-wrapper" style="min-height: 365px;">
      <section class="content">
      <div class="container-fluid">
-        <h2>Danh sách bình luận</h2></br>
+        <h2 class="mt-2">Danh sách bình luận</h2></br>
         <form  action="" method="GET">
            <input type="text" name="txtsearch" class='searchform'/>
-           <input class='sbutton' type="submit" value="Search"/>
+           <input class='sbutton rounded' type="submit" value="Search"/>
         </form></br>
     <div class="row">
         <div class="table-responsive">
@@ -86,19 +86,15 @@ require('./../connect.php'); ?>
  
 <style>
 
-.sbutton {
-color: #007bff;
-border-radius: 10px;
-}
-
+/* 
 h2{
  padding-top: 10px;
 }
-  
-.form{
+   */
+/* .form{
   border: 2px solid black;
   border-radius: 5px;
-}
+} */
 
 
 
