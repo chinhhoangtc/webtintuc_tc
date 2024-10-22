@@ -17,7 +17,6 @@ require('./connect.php'); ?>
       $category_id = $row['category_id'];
       $image = $row['image'];
       $time = $row['created_at']; // Lấy thời gian tạo bài viết
-
     ?>
       <div class="col-md-9 border">
         <li class="bantin">
@@ -40,15 +39,15 @@ require('./connect.php'); ?>
       <div class="col-md-3 border">
         <div class="advertisements">
           <?php
-          // Truy vấn danh sách quảng cáo
-          $ad_sql = "SELECT * FROM advertisements ORDER BY id DESC";
+          // Truy vấn một quảng cáo mỗi lần
+          $ad_sql = "SELECT * FROM advertisements ORDER BY id DESC LIMIT 1"; // Lấy một quảng cáo
           $ad_result = mysqli_query($conn, $ad_sql);
 
-          while ($ad_row = mysqli_fetch_array($ad_result)) {
+          if ($ad_row = mysqli_fetch_array($ad_result)) {
             $ad_image = $ad_row['image'];
             $ad_link = $ad_row['link'];
-            echo "<div class='ad-item'>";
-            echo "<a href='$ad_link' target='_blank'><img src='$ad_image' width='200px' height='150px' /></a>";
+            echo "<div class='ad-item' style='margin-bottom: 10px;'>";
+            echo "<a href='$ad_link' target='_blank'><img src='$ad_image' width='100%' height='auto' /></a>";
             echo "</div>";
           }
           ?>
