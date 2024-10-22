@@ -1,7 +1,7 @@
 <?php
 include_once('./master_layout/header.php');
 require('./connect.php'); ?>
-<div class="container blogging-style">
+<div class="container blogging-style ">
   <div class="page-header">
     <h1>Trang chủ</h1>
   </div>
@@ -16,18 +16,28 @@ require('./connect.php'); ?>
       $tieude = $row['title'];
       $category_id = $row['category_id'];
       $image = $row['image'];
-      $time = $row['created_at'];
-
+      $time = $row['created_at']; // Lấy thời gian tạo bài viết
 
     ?>
-      <div class="col-md-9">
-        <li class=bantin>
-          <?php echo "<a href='post-item-details.php?id=$idtin&category_id=$category_id'><img src='$image' width='200px' height='150px' /></a>";
-          echo "<a href='post-item-details.php?id=$idtin&category_id=$category_id'><h4>$tieude</h4></a>";
-          ?>
+      <div class="col-md-9 border">
+        <li class="bantin">
+          <div class="row">
+            <div class="col-md-6">
+              <?php
+              echo "<a href='post-item-details.php?id=$idtin&category_id=$category_id'><img src='$image' width='100%' height='auto' /></a>";
+              ?>
+            </div>
+            <div class="col-md-6">
+              <?php
+              echo "<a href='post-item-details.php?id=$idtin&category_id=$category_id'><h4>$tieude</h4></a>";
+              echo "<p>Thời gian: " . date('d/m/Y H:i', strtotime($time)) . "</p>"; // Hiển thị thời gian
+              ?>
+            </div>
+          </div>
         </li>
       </div>
-      <div class="col-md-3">
+
+      <div class="col-md-3 border">
         <div class="advertisements">
           <?php
           // Truy vấn danh sách quảng cáo
@@ -45,8 +55,6 @@ require('./connect.php'); ?>
         </div>
       </div>
     <?php } ?>
-
-
   </div>
 
   <!-- calendar start -->
@@ -57,29 +65,12 @@ require('./connect.php'); ?>
 
 </div>
 
-
-
 <?php include_once('./master_layout/footer.php') ?>
 
 <style>
-  /* .ind {
-    width: 70%;
-  } */
-
-  /* .col {
-    float: left;
-    width: 30%;
-    padding: 20px;
-  } */
-
   .bantin {
     list-style-type: none;
   }
-
-  /* .advertisements {
-    float: right;
-    width: 25%;
-  } */
 
   h4 {
     margin-top: 17px;
