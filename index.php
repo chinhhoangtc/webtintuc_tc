@@ -9,12 +9,12 @@ require('./connect.php');
   </div>
 </div>
 
-<div class="container">
+<div class="container border">
   <div class="row">
     <!-- Bài viết -->
-    <div class="col-md-9">
+    <div class="col-md-11" style="margin-bottom: 50px;">
       <?php
-      $sql = "SELECT * FROM posts ORDER BY created_at DESC";
+      $sql = "SELECT * FROM posts ORDER BY created_at DESC limit 10";
       $result = mysqli_query($conn, $sql);
 
       while ($row = mysqli_fetch_array($result)) {
@@ -25,12 +25,12 @@ require('./connect.php');
         $time = $row['created_at']; // Lấy thời gian tạo bài viết
       ?>
         <a href='post-item-details.php?id=<?php echo $idtin; ?>&category_id=<?php echo $category_id; ?>' class="text-decoration-none text-dark">
-          <div class="card mb-4 shadow-sm">
-            <div class="row no-gutters">
-              <div class="col-md-3">
-                <img class="card-img-top" src="<?php echo $image; ?>" alt="Post Image">
+          <div class="card mb-4 shadow-sm"  style="height: 210px; overflow: hidden; padding: 15px 0px;">
+            <div class="row no-gutters" style="height: 100%;">
+              <div class="col-md-5" style="height: 100%;">
+                <img class="card-img-top" src="<?php echo $image; ?>" alt="Post Image" >
               </div>
-              <div class="col-md-9">
+              <div class="col-md-10" style="height: 100%;">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $tieude; ?></h5>
                   <p class="card-text">
@@ -44,29 +44,28 @@ require('./connect.php');
       <?php } ?>
     </div>
 
-
     <!-- Quảng cáo -->
-    <div class="col-md-3">
-    <div class="sticky-top" style="top: 20px;">
+    <div class="col-md-5">
+      <div class="sticky-top" style="top: 20px;">
         <?php
         $ad_sql = "SELECT * FROM advertisements ORDER BY created_at DESC";
         $ad_result = mysqli_query($conn, $ad_sql);
 
         while ($ad_row = mysqli_fetch_array($ad_result)) {
-            $ad_image = $ad_row['image'];
-            $ad_link = $ad_row['link'];
+          $ad_image = $ad_row['image'];
+          $ad_link = $ad_row['link'];
         ?>
-            <div class="card mb-4 shadow-sm" style="height: 100%; margin-bottom: 10px;">
-                <a href="<?php echo $ad_link; ?>" target="_blank" class="d-block" style="height: 100%;">
-                    <img src="<?php echo $ad_image; ?>" alt="Advertisement" class="card-img-top" style="height: 100%; object-fit: cover;">
-                </a>
-            </div>
+          <div class="card mb-4 shadow-sm" style="height: 100%; margin-bottom: 10px;">
+            <a href="<?php echo $ad_link; ?>" target="_blank" class="d-block" style="height: 100%;">
+              <img src="<?php echo $ad_image; ?>" alt="Advertisement" class="card-img-top" style="height: 100%; object-fit: cover;">
+            </a>
+          </div>
         <?php } ?>
+      </div>
     </div>
-</div>
-
   </div>
 </div>
+
 
 <!-- Calendar -->
 <div class="col-sm-16 bt-space wow fadeInUp animated my-4" data-wow-delay="1s" data-wow-offset="50">
@@ -87,10 +86,9 @@ require('./connect.php');
 
   .card-img-top {
     width: 100%;
-    height: 150px;
+    height: 100%;
     /* Điều chỉnh chiều cao để hình ảnh nhỏ lại */
     object-fit: cover;
-    border-radius: 4px;
   }
 
   .blogging-style {
@@ -123,4 +121,5 @@ require('./connect.php');
   .text-muted {
     font-size: 0.9rem;
   }
+
 </style>
