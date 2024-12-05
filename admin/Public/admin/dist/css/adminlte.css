@@ -4417,6 +4417,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  background: linear-gradient(198deg, #5193e9, #49dee1);
 }
 
 .navbar-nav .nav-link {
