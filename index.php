@@ -1,6 +1,24 @@
 <?php
 include_once('./master_layout/header.php');
 require('./connect.php');
+
+// Số bài viết mỗi trang
+$posts_per_page = 10;
+
+// Lấy số trang từ URL, mặc định là trang 1
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $posts_per_page; // Tính offset
+
+// Lấy bài viết với phân trang
+$sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT $posts_per_page OFFSET $offset";
+$result = mysqli_query($conn, $sql);
+
+// Tính tổng số bài viết và tổng số trang
+$sql_total = "SELECT COUNT(*) FROM posts";
+$result_total = mysqli_query($conn, $sql_total);
+$row_total = mysqli_fetch_array($result_total);
+$total_posts = $row_total[0];
+$total_pages = ceil($total_posts / $posts_per_page);
 ?>
 
 <div class="container blogging-style my-4">
@@ -14,21 +32,18 @@ require('./connect.php');
     <!-- Bài viết -->
     <div class="col-md-11" style="margin-bottom: 50px;">
       <?php
-      $sql = "SELECT * FROM posts ORDER BY created_at DESC limit 10";
-      $result = mysqli_query($conn, $sql);
-
       while ($row = mysqli_fetch_array($result)) {
         $idtin = $row['id'];
         $tieude = $row['title'];
         $category_id = $row['category_id'];
         $image = $row['image'];
-        $time = $row['created_at']; // Lấy thời gian tạo bài viết
+        $time = $row['created_at'];
       ?>
         <a href='post-item-details.php?id=<?php echo $idtin; ?>&category_id=<?php echo $category_id; ?>' class="text-decoration-none text-dark">
-          <div class="card mb-4 shadow-sm"  style="height: 210px; overflow: hidden; padding: 15px 0px;">
+          <div class="card mb-4 shadow-sm" style="height: 210px; overflow: hidden; padding: 15px 0px;">
             <div class="row no-gutters" style="height: 100%;">
               <div class="col-md-5" style="height: 100%;">
-                <img class="card-img-top" src="<?php echo $image; ?>" alt="Post Image" >
+                <img class="card-img-top" src="<?php echo $image; ?>" alt="Post Image">
               </div>
               <div class="col-md-10" style="height: 100%;">
                 <div class="card-body">
@@ -64,6 +79,39 @@ require('./connect.php');
       </div>
     </div>
   </div>
+  
+
+  <!-- Phân trang -->
+<div class="text-center">
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <!-- Nút Previous -->
+      <?php if ($page > 1): ?>
+        <li class="page-item">
+          <a class="page-link" href="?page=<?php echo $page - 1; ?>" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+      <?php endif; ?>
+
+      <!-- Các trang -->
+      <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+        <li class="page-item <?php echo ($i == $page) ? 'active' : ''; ?>">
+          <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+        </li>
+      <?php endfor; ?>
+
+      <!-- Nút Next -->
+      <?php if ($page < $total_pages): ?>
+        <li class="page-item">
+          <a class="page-link" href="?page=<?php echo $page + 1; ?>" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      <?php endif; ?>
+    </ul>
+  </nav>
+</div>
 </div>
 
 
@@ -87,7 +135,6 @@ require('./connect.php');
   .card-img-top {
     width: 100%;
     height: 100%;
-    /* Điều chỉnh chiều cao để hình ảnh nhỏ lại */
     object-fit: cover;
   }
 
@@ -95,17 +142,6 @@ require('./connect.php');
     background-color: #f8f9fa;
     padding: 10px;
     border-radius: 5px;
-  }
-
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s ease;
-  }
-
-  .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
   }
 
   .shadow-sm {
@@ -121,5 +157,4 @@ require('./connect.php');
   .text-muted {
     font-size: 0.9rem;
   }
-
 </style>

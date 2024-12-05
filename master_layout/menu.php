@@ -6,7 +6,7 @@
     <div class="container header">
       <div class="row">
         <div class="col-sm-5 col-md-5 wow fadeInUpLeft animated"><a class="navbar-brand" href="index.php">ABCnewstc</a></div>
-        <div class="col-sm-11 col-md-11 hidden-xs text-right"><img src="./assets/images/ads/468-60-ad.gif" width="468" height="60" alt=""/></div>
+        <div class="col-sm-11 col-md-11 hidden-xs text-right"><a href="https://marketingmagic.app/" target="_blank"><img src="https://chinmedia.vn/wp-content/uploads/social-share-gif.gif" width="100%" height="100%" alt="" style="max-width: 468px; max-height: 60px; overflow: hidden; object-fit: cover;"/></a></div>
       </div>
     </div>
     <!-- header end --> 

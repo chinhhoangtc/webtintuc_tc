@@ -50,7 +50,7 @@ session_start();
             <div class="row">
               <div class="col-sm-8 col-xs-16">
                 <ul id="inline-popups" class="list-inline">
-                  <li class="hidden-xs"><a href="#">Quảng cáo</a></li>
+                <li class="hidden-xs"><a href="#">Quảng cáo</a></li>
                   <?php if (!isset($_SESSION['account'])) : ?>
                     <li><a class="" href="login.php" data-effect="mfp-zoom-in">Đăng nhập</a></li>
                     <li><a class="" href="regisin.php" data-effect="mfp-zoom-in">Tạo tài khoản</a></li>
