@@ -28,6 +28,8 @@ if (isset($_POST['submit'])) {
         // Đăng nhập thành công
         $account = $result->fetch_array(MYSQLI_ASSOC); //fetch_array đọc kết quả của result (tìm và trả về 1 dòng kết quả của câu truy vấn)
         $_SESSION['account_admin'] = $account; // $_SESSION: biến toàn cục và là kiểu mảng
+        // Lưu riêng ID của tài khoản vào session
+        $_SESSION['account_id'] = $account['id'];
         header('Location: index.php');
     } else {
         // Đăng nhập thất bại
@@ -69,6 +71,7 @@ if (isset($_POST['submit'])) {
                         <!-- <button type="button" class="btn btn-primary mt-4">
                             <a href="forget-password.php">Quên mật khẩu</a>
                         </button> -->
+
                     </form>
                 </div>
             </div>

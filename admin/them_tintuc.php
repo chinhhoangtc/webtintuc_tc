@@ -1,9 +1,15 @@
 <?php
+session_start();
 require('./../connect.php'); ?>
-
 <?php
-    // $sql = "SELECT *FROM posts inner join account on posts.user_id=account.id";
-    // $sql = "SELECT *FROM posts inner join categories on posts.category_id=categories.id";
+if (isset($_SESSION['account_id'])) {
+	// echo "Account ID: " . $_SESSION['account_id'];
+} else {
+	echo "Account ID chưa được thiết lập.";
+}
+
+?>
+<?php
     $sql_category= "SELECT * FROM categories";
     $sql_post = "SELECT * FROM posts";
 
@@ -22,8 +28,7 @@ require('./../connect.php'); ?>
         $category = $_POST['category_id'];
         $category_id = (int)$category;
 
-        $account = $_POST['accounts_id'];
-        $accounts_id = (int)$account;
+        $accounts_id = (int)$_SESSION['account_id'];
 
         $status = $_POST['status'];
 

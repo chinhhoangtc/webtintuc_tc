@@ -1,4 +1,6 @@
 <?php require('layouts/header.php'); ?>
+
+
 <div class="content-wrapper" style="min-height: 365px;">
 	<div class="content-header">
 		<div class="container-fluid">
